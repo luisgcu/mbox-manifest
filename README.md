@@ -12,11 +12,13 @@ The manifest file serves as a map of the slaves that the ModbusBox will be able 
 
 List of slaves currently included in the official manifest file.
 
-* Control Techniques - M200/300/400 Open Loop
-* Control Techniques - M200/300/400 RFCA
-* Danfoss - VLT® HVAC Drive FC 102
-* ABB - ACS310
-* Eastron - SDM230-Modbus
+* **Variable frequency AC drive**: Control Techniques - Commander C200/300 Open Loop.
+* **Variable frequency AC drive**: Danfoss - VLT® HVAC Drive FC 102.
+* **Variable frequency AC drive**: ABB - ACS310.
+* **3 phase Energy Meter**: ELNET -LT-TCP.
+* **Single phase Energy Meter**: Eastron - SDM230-Modbus.
+* **Industrial Temperature & Humidity Sensor**: Novus -RHTClimate
+* **Industrial remote IO**: Pixsys -MCM260-4AD.
 
 
 
