@@ -451,7 +451,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "vfd",
       "device_manufacturer": "Danfoss",
       "device_model": "VLT® HVAC Drive FC 102",
@@ -859,7 +859,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "vfd",
       "device_manufacturer": "ABB",
       "device_model": "ACS310",
@@ -882,6 +882,12 @@
               "label": "Run Fwd",
               "val": 3199
             },
+			{
+              "name": "stop1",
+              "type": "fixed",
+              "label": "stop1",
+              "val": 3198
+            },
             {
               "name": "stop",
               "type": "fixed",
@@ -900,20 +906,8 @@
               "name": "minspd",
               "type": "fixed",
               "label": "Min Speed",
-              "val": 0
-            },
-            {
-              "name": "spd1",
-              "type": "fixed",
-              "label": "Speed 1",
               "val": 4000
-            },
-            {
-              "name": "spd2",
-              "type": "fixed",
-              "label": "Speed 2",
-              "val": 7000
-            },
+            },            
             {
               "name": "maxspd",
               "type": "fixed",
@@ -924,7 +918,7 @@
               "name": "custom",
               "type": "input",
               "label": "Custom Speed",
-              "min": 0,
+              "min": 100,
               "max": 10000
             }
           ]
@@ -987,21 +981,10 @@
           "offset": -1
         },
         {
-          "address": 106,
-          "name": "Power Outuput in kw",
-          "info": "Estimated power output",
-          "short_name": "PowerOut",
-          "enabled": true,
-          "size": 16,
-          "dp": 1,
-          "table_type": 0,
-          "offset": -1
-        },
-        {
           "address": 107,
           "name": "DC bus voltage",
           "info": "Voltage at the DC bus",
-          "short_name": "EnergyMeter",
+          "short_name": "dcbusVolts",
           "enabled": true,
           "size": 16,
           "dp": 0,
@@ -1161,11 +1144,55 @@
           "dp": 0,
           "table_type": 0,
           "offset": -1
+        },
+		{
+          "address": 160,
+          "name": "Status of digital inputs",
+          "info": "DI 1-5 STATUS",
+          "short_name": "di1_5status",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 174,
+          "name": "Saved Kwh",
+          "info": "Energy saved in kWh ",
+          "short_name": "enr_sav_kw",
+          "enabled": true,
+          "size": 16,
+          "dp": 1,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 305,
+          "name": "Fault Word 1",
+          "info": "Fault Word 1",
+          "short_name": "fault_wrd",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 308,
+          "name": "Alarm Word 1",
+          "info": "Alarm Word 1",
+          "short_name": "alrm_wrd1",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
         }
       ]
     },
     {
-      "id": 6,
+      "id": 4,
       "type": "generic",
       "device_manufacturer": "ELNET",
       "device_model": "LT-TCP",
@@ -1333,7 +1360,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "generic",
       "device_manufacturer": "Pixsys",
       "device_model": "MCM260-4AD",
@@ -1519,7 +1546,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "generic",
       "device_manufacturer": "Novus",
       "device_model": "RHTClimate",
