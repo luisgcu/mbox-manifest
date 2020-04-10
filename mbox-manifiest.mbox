@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "slaves": [
     {
       "id": 1,
@@ -1578,6 +1578,427 @@
           "dp": 1,
           "table_type": 0,
           "offset": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "vfd",
+      "device_manufacturer": "ABB",
+      "device_model": "ACS580",
+      "supported_baudrates": [
+        9600,
+        19200,
+        38400,
+        57600
+      ],
+      "functions": [
+        {
+          "name": "remote_ctrl",
+          "label": "Remote Control",
+          "reg_grp": 16,
+          "reg": 1,
+          "options": [
+            {
+              "name": "runfwd",
+              "type": "fixed",
+              "label": "Run Fwd",
+              "val": 3199
+            },
+			{
+              "name": "stop1",
+              "type": "fixed",
+              "label": "stop1",
+              "val": 3198
+            },
+            {
+              "name": "stop",
+              "type": "fixed",
+              "label": "Stop",
+              "val": 3198
+            }
+          ]
+        },
+        {
+          "name": "speed_ctrl",
+          "label": "Remote Speed Control",
+          "reg_grp": 16,
+          "reg": 3,
+          "options": [
+            {
+              "name": "minspd",
+              "type": "fixed",
+              "label": "Min Speed",
+              "val": 4000
+            },            
+            {
+              "name": "maxspd",
+              "type": "fixed",
+              "label": "Max Speed",
+              "val": 10000
+            },
+            {
+              "name": "custom",
+              "type": "input",
+              "label": "Custom Speed",
+              "min": 100,
+              "max": 10000
+            }
+          ]
+        }
+      ],
+      "regs16": [
+        {
+          "address": 101,
+          "name": "Motor Speed used",
+          "info": "Show the motor sent",
+          "short_name": "mtr_spd_used",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 102,
+          "name": "Motor estimated speed",
+          "info": "Show motor speed stimated by the vfd",
+          "short_name": "mtr_stim_spd",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 103,
+          "name": "Motor speed in %",
+          "info": "Motor speed in %",
+          "short_name": "mtr_spd_perc",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 106,
+          "name": "Output frecuency",
+          "info": "Output frecuency",
+          "short_name": "out_frec",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 107,
+          "name": "Motor Current",
+          "info": "Motor Current",
+          "short_name": "mtr_curr",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 108,
+          "name": "Motor Current % of mtr nom",
+          "info": "Motor Current % of mtr nom",
+          "short_name": "mtr_curr_perc_mtrnom",
+          "enabled": true,
+          "size": 16,
+          "dp": 1,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 109,
+          "name": "Motor Current % of drive nom",
+          "info": "Motor Current % of mtr nom",
+          "short_name": "mtr_curr_perc_vfdnom",
+          "enabled": true,
+          "size": 16,
+          "dp": 1,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 110,
+          "name": "Motor torque in %",
+          "info": "Motor shaft torque %",
+          "short_name": "mtr_torq_perc",
+          "enabled": true,
+          "size": 16,
+          "dp": 1,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 111,
+          "name": "DC bus voltage",
+          "info": "Voltage at the DC bus",
+          "short_name": "dcbus_volts",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 113,
+          "name": "Out Volts",
+          "info": "Vfd output volts to motor",
+          "short_name": "outp_volts",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 114,
+          "name": "Output power",
+          "info": "instantaneos Output power",
+          "short_name": "outp_pwr",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 115,
+          "name": "Output power % of motor nom",
+          "info": "Output power % of motor nom",
+          "short_name": "outp_pwr_prct_mtr",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 117,
+          "name": "Motor shaft power",
+          "info": "Motor shaft power",
+          "short_name": "mtr_shft_pwr",
+          "enabled": true,
+          "size": 16,
+          "dp": 2,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 119,
+          "name": "Inverter MW counter",
+          "info": "Inverter MW counter",
+          "short_name": "mw_counter",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 118,
+          "name": "Inverter kW counter",
+          "info": "Inverter kW counter",
+          "short_name": "kw_counter",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 161,
+          "name": "Absolute motor speed  used",
+          "info": "Absolute motor speed  used",
+          "short_name": "abs_mtr_speed_used",
+          "enabled": false,
+          "size": 16,
+          "dp": 12,
+          "table_type": 0,
+          "offset": -1
+        },        
+        {
+          "address": 52,
+          "name": "Runtime days",
+          "info": "running time in days",
+          "short_name": "days_run_time",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 53,
+          "name": "Runtime in hours",
+          "info": "running time in hours",
+          "short_name": "hours_run_time",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 510,
+          "name": "Control board temperature",
+          "info": "Control board temperature C",
+          "short_name": "ctrl_brd_temp",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 511,
+          "name": "Inverter temperature in %",
+          "info": "Inverter temperature in %",
+          "short_name": "vfd_temp_prctn",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 616,
+          "name": "Drive Status word 1",
+          "info": "Drive Status word 1",
+          "short_name": "vfd_stwrd1",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 1211,
+          "name": "Analog 1 actual value",
+          "info": "Analog input 1 value",
+          "short_name": "ana1_act_val",
+          "enabled": false,
+          "size": 16,
+          "dp": 3,
+          "table_type": 0,
+          "offset": -1
+        },   
+        {
+          "address": 4,
+          "name": "Status Word",
+          "info": "Drive status word",
+          "short_name": "status_wrd",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 5,
+          "name": "User register 1",
+          "info": "User register 1",
+          "short_name": "userreg1",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 6,
+          "name": "User register 2",
+          "info": "User register 2",
+          "short_name": "userreg2",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 2,
+          "name": "Reference 1",
+          "info": "Input ref 1",
+          "short_name": "ref1",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 3,
+          "name": "Reference 2",
+          "info": "Input ref 2",
+          "short_name": "ref2",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 1,
+          "name": "Control Word: [REG1]",
+          "info": "Control word ",
+          "short_name": "ctrl_wrd",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 100,
+          "name": "Status of digital inputs",
+          "info": "DI 1-5 STATUS",
+          "short_name": "di1_5status",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 453,
+          "name": "Saved Kwh",
+          "info": "Energy saved in kWh ",
+          "short_name": "enr_sav_kw",
+          "enabled": false,
+          "size": 16,
+          "dp": 1,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 520,
+          "name": "Diagnostic Word 1",
+          "info": "Diagnostic Word 1",
+          "short_name": "diag_wrd1",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+		{
+          "address": 521,
+          "name": "Diagnostic Word 2",
+          "info": "Diagnostic Word 2",
+          "short_name": "diag_wrd2",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
         }
       ]
     }
