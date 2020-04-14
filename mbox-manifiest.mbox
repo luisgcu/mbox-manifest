@@ -1,5 +1,5 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.5",
   "slaves": [
     {
       "id": 1,
@@ -1651,9 +1651,9 @@
         
         {
           "address": 510,
-          "name": "Control board temperature",
-          "info": "Control board temperature C",
-          "short_name": "ctrl_brd_temp",
+          "name": "Control board temperature C",
+          "info": "Pr[5.10]",
+          "short_name": "vfd_ctrlbrd_temp",
           "enabled": true,
           "size": 16,
           "dp": 0,
@@ -1663,8 +1663,41 @@
         {
           "address": 511,
           "name": "Inverter temperature in %",
-          "info": "Inverter temperature in %",
+          "info": "Pr[5.11]",
           "short_name": "vfd_temp_prctn",
+          "enabled": true,
+          "size": 16,
+          "dp": 1,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 520,
+          "name": "Diagnostic word 1",
+          "info": "Pr[5.11]",
+          "short_name": "diag_wrd1",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 521,
+          "name": "Diagnostic word 2",
+          "info": "Pr[5.21]",
+          "short_name": "diag_wrd2",
+          "enabled": false,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
+        },
+        {
+          "address": 611,
+          "name": "Main status word",
+          "info": "Pr[6.11]",
+          "short_name": "vfd_main_stwrd",
           "enabled": true,
           "size": 16,
           "dp": 0,
@@ -1674,7 +1707,7 @@
         {
           "address": 616,
           "name": "Drive Status word 1",
-          "info": "Drive Status word 1",
+          "info": "Pr[6.16]",
           "short_name": "vfd_stwrd1",
           "enabled": true,
           "size": 16,
@@ -1683,33 +1716,11 @@
           "offset": -1
         },
         {
-          "address": 4,
-          "name": "Status Word",
-          "info": "Drive status word",
-          "short_name": "status_wrd",
+          "address": 617,
+          "name": "Drive Status word 2",
+          "info": "Pr[6.17]",
+          "short_name": "vfd_stwrd2",
           "enabled": true,
-          "size": 16,
-          "dp": 0,
-          "table_type": 0,
-          "offset": -1
-        },
-        {
-          "address": 5,
-          "name": "User register 1",
-          "info": "User register 1",
-          "short_name": "userreg1",
-          "enabled": false,
-          "size": 16,
-          "dp": 0,
-          "table_type": 0,
-          "offset": -1
-        },
-        {
-          "address": 6,
-          "name": "User register 2",
-          "info": "User register 2",
-          "short_name": "userreg2",
-          "enabled": false,
           "size": 16,
           "dp": 0,
           "table_type": 0,
@@ -1718,9 +1729,9 @@
         {
           "address": 2,
           "name": "Reference 1",
-          "info": "Input ref 1",
+          "info": "Addr[2]",
           "short_name": "ref1",
-          "enabled": true,
+          "enabled": false,
           "size": 16,
           "dp": 0,
           "table_type": 0,
@@ -1729,7 +1740,7 @@
         {
           "address": 3,
           "name": "Reference 2",
-          "info": "Input ref 2",
+          "info": "Addr[3]",
           "short_name": "ref2",
           "enabled": true,
           "size": 16,
@@ -1740,29 +1751,18 @@
         {
           "address": 1,
           "name": "Control Word",
-          "info": "Control word ",
+          "info": "Addr[1] ",
           "short_name": "ctrl_wrd",
-          "enabled": false,
+          "enabled": true,
           "size": 16,
           "dp": 0,
           "table_type": 0,
           "offset": -1
         },		    
 		    {
-          "address": 453,
-          "name": "Saved Kwh",
-          "info": "Energy saved in kWh ",
-          "short_name": "enr_sav_kw",
-          "enabled": false,
-          "size": 16,
-          "dp": 1,
-          "table_type": 0,
-          "offset": -1
-        },
-		    {
           "address": 520,
           "name": "Diagnostic Word 1",
-          "info": "Diagnostic Word 1",
+          "info": "Pr[5.20]",
           "short_name": "diag_wrd1",
           "enabled": false,
           "size": 16,
@@ -1773,20 +1773,32 @@
 		    {
           "address": 521,
           "name": "Diagnostic Word 2",
-          "info": "Diagnostic Word 2",
+          "info": "Pr[5.21]",
           "short_name": "diag_wrd2",
           "enabled": false,
           "size": 16,
           "dp": 0,
           "table_type": 0,
           "offset": -1
+        },
+        {
+          "address": 711,
+          "name": "Cpu usage %",
+          "info": "Pr[7.11]",
+          "short_name": "cpu_usage",
+          "enabled": true,
+          "size": 16,
+          "dp": 0,
+          "table_type": 0,
+          "offset": -1
         }
+       
       ],
       "regs32": [
         {
           "address": 20202,
           "name": "Motor Speed used",
-          "info": "Show the motor sent",
+          "info": "Pr[1.1]",
           "short_name": "mtr_spd_used",
           "enabled": true,
           "size": 32,
@@ -1798,7 +1810,7 @@
         {
           "address": 20204,
           "name": "Motor estimated speed",
-          "info": "Show motor speed stimated by the vfd",
+          "info": "Pr[1.2]",
           "short_name": "mtr_stim_spd",
           "enabled": true,
           "size": 32,
@@ -1810,7 +1822,7 @@
         {
           "address": 20206,
           "name": "Motor speed in %",
-          "info": "Motor speed in %",
+          "info": "Pr[1.3]",
           "short_name": "mtr_spd_perc",
           "enabled": true,
           "size": 32,
@@ -1822,7 +1834,7 @@
         {
           "address": 20212,
           "name": "Output frecuency",
-          "info": "Output frecuency",
+          "info": "Pr[1.6]",
           "short_name": "out_frec",
           "enabled": true,
           "size": 32,
@@ -1833,8 +1845,8 @@
         },
         {
           "address": 20214,
-          "name": "Motor Current",
-          "info": "Motor Current",
+          "name": "Motor Current in amps",
+          "info": "Pr[1.7]",
           "short_name": "mtr_curr",
           "enabled": true,
           "size": 32,
@@ -1845,8 +1857,8 @@
         },
         {
           "address": 20216,
-          "name": "Motor Current % of mtr nom",
-          "info": "Motor Current % of mtr nom",
+          "name": "Motor current amps % of mtr nom",
+          "info": "Pr[1.8]",
           "short_name": "mtr_curr_perc_mtrnom",
           "enabled": true,
           "size": 32,
@@ -1857,8 +1869,8 @@
         },
         {
           "address": 20218,
-          "name": "Motor Current % of drive nom",
-          "info": "Motor Current % of mtr nom",
+          "name": "Motor current amps   % of drive nom",
+          "info": "Pr[1.9]",
           "short_name": "mtr_curr_perc_vfdnom",
           "enabled": true,
           "size": 32,
@@ -1870,7 +1882,7 @@
         {
           "address": 20220,
           "name": "Motor torque in %",
-          "info": "Motor shaft torque %",
+          "info": "Pr[1.10]",
           "short_name": "mtr_torq_perc",
           "enabled": true,
           "size": 32,
@@ -1881,8 +1893,8 @@
         },        
         {
           "address": 20222,
-          "name": "DC BUS 32 bits",
-          "info": "Dc Bus 32 bits",
+          "name": "Dc bus volts",
+          "info": "Pr[1.11]",
           "short_name": "dcbus_volts",
           "enabled": true,
           "size": 32,
@@ -1893,8 +1905,8 @@
         },
         {
           "address": 20226,
-          "name": "Out Volts",
-          "info": "Vfd output volts to motor",
+          "name": "Output  voltage",
+          "info": "Pr[1.13]",
           "short_name": "outp_volts",
           "enabled": true,
           "size": 32,
@@ -1905,8 +1917,8 @@
         },
         {
           "address": 20228,
-          "name": "Output power",
-          "info": "instantaneos Output power",
+          "name": "VFD Output power",
+          "info": "Pr[1.14]",
           "short_name": "outp_pwr",
           "enabled": true,
           "size": 32,
@@ -1918,7 +1930,7 @@
         {
           "address": 20230,
           "name": "Output power % of motor nom",
-          "info": "Output power % of motor nom",
+          "info": "Pr[1.15]",
           "short_name": "outp_pwr_prct_mtr",
           "enabled": true,
           "size": 32,
@@ -1930,8 +1942,8 @@
         {
           "address": 20234,
           "name": "Motor shaft power",
-          "info": "Motor shaft power",
-          "short_name": "mtr_shft_pwr",
+          "info": "Pr[1.17]",
+          "short_name": "mtr_shaft_pwr",
           "enabled": true,
           "size": 32,
           "dp": 2,
@@ -1942,7 +1954,7 @@
         {
           "address": 20238,
           "name": "Inverter MW counter",
-          "info": "Inverter MW counter",
+          "info": "Pr[1.19]",
           "short_name": "mw_counter",
           "enabled": true,
           "size": 32,
@@ -1954,7 +1966,7 @@
         {
           "address": 20240,
           "name": "Inverter kW counter",
-          "info": "Inverter kW counter",
+          "info": "Pr[1.20]",
           "short_name": "kw_counter",
           "enabled": true,
           "size": 32,
@@ -1966,7 +1978,7 @@
         {
           "address": 20322,
           "name": "Absolute motor speed  used",
-          "info": "Absolute motor speed  used",
+          "info": "Pr[1.61]",
           "short_name": "abs_mtr_speed_used",
           "enabled": false,
           "size": 32,
@@ -1977,8 +1989,8 @@
         }, 
         {
           "address": 21004,
-          "name": "Runtime days",
-          "info": "running time in days",
+          "name": "Runtime in days",
+          "info": "Pr[5.2]",
           "short_name": "days_run_time",
           "enabled": false,
           "size": 32,
@@ -1990,7 +2002,7 @@
         {
           "address": 39006,
           "name": "Estimated AC supply voltage",
-          "info": "AC in volts",
+          "info": "Pr[95.3]",
           "short_name": "ac_in_volts",
           "enabled": false,
           "size": 32,
@@ -2000,13 +2012,13 @@
           "offset": -1
         },
         {
-          "address": 1006,
-          "name": "Runtime in hours",
-          "info": "running time in hours",
-          "short_name": "hours_run_time",
+          "address": 21006,
+          "name": "Hours running",
+          "info": "Pr[5.3]",
+          "short_name": "hours_running",
           "enabled": false,
           "size": 32,
-          "dp": 0,
+          "dp": 1,
           "table_type": 0,
           "IEEE754": false,
           "offset": -1
@@ -2014,7 +2026,7 @@
         {
           "address": 22002,
           "name": "Status of digital inputs",
-          "info": "DI 1-6 status word",
+          "info": "Pr[10.1]",
           "short_name": "din_1_5_stwrd",
           "enabled": true,
           "size": 32,
@@ -2026,7 +2038,7 @@
         {
           "address": 22422,
           "name": "Analog 1 actual value",
-          "info": "Analog input 1 value",
+          "info": "Pr[12.11]",
           "short_name": "ana1_act_val",
           "enabled": true,
           "size": 32,
@@ -2038,11 +2050,71 @@
         {
           "address": 22424,
           "name": "Analog 1 scaled value",
-          "info": "Analog scaled value",
+          "info": "Pr[12.12]",
           "short_name": "ana1_scl_val",
           "enabled":true,
           "size": 32,
           "dp": 3,
+          "table_type": 0,
+          "IEEE754": false,
+          "offset": -1
+        },
+        {
+          "address": 29006,
+          "name": "Saved kw hours",
+          "info": "Pr[45.3] ",
+          "short_name": "enr_sav_kwh",
+          "enabled": false,
+          "size": 32,
+          "dp": 1,
+          "table_type": 0,
+          "IEEE754": false,
+          "offset": -1
+        },
+        {
+          "address": 27002,
+          "name": "Motor  estimated  temperature",
+          "info": "Pr[35.1]",
+          "short_name": "mtr_est_temp",
+          "enabled": false,
+          "size": 32,
+          "dp": 0,
+          "table_type": 0,
+          "IEEE754": false,
+          "offset": -1
+        },
+        {
+          "address": 27004,
+          "name": "Measured temperature 1",
+          "info": "Pr[35.2]",
+          "short_name": "meas_temp1",
+          "enabled": false,
+          "size": 32,
+          "dp": 0,
+          "table_type": 0,
+          "IEEE754": false,
+          "offset": -1
+        },
+        {
+          "address": 27006,
+          "name": "Measured temperature 2",
+          "info": "Pr[35.3]",
+          "short_name": "meas_temp2",
+          "enabled": false,
+          "size": 32,
+          "dp": 0,
+          "table_type": 0,
+          "IEEE754": false,
+          "offset": -1
+        },
+        {
+          "address": 27010,
+          "name": "Motor overload  level",
+          "info": "Pr[35.5]",
+          "short_name": "mtr_ovld_lvl",
+          "enabled": false,
+          "size": 32,
+          "dp": 1,
           "table_type": 0,
           "IEEE754": false,
           "offset": -1
